@@ -1,0 +1,10 @@
+@mixin flex-wrap{
+	display: flex !important;
+	flex-wrap: wrap !important;
+}
+@mixin flex{
+	display: flex;
+}
+@mixin w-full{
+	width: 100%;
+}

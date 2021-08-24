@@ -1,0 +1,37 @@
+@use "theme.scss";
+
+.itemvideo{
+	width: 100%;
+	margin-top: 20px;
+	p.name{
+		margin-left: 10px;
+		font-weight: 500;
+	}
+	img{
+		width: 60px;
+		height: 60px;
+	}
+	svg{
+		width: 30px;
+		height: 30px;
+	}
+	video{
+		@media (min-width: theme.$query_md){
+			width: calc(100% - 5em);
+		}
+		width: 95%;
+	}
+	.listicon > div{
+		text-align: center;
+		.icon{
+			background-color: #eeeeee;
+			border-radius: 50%;
+			padding: 0.5em;
+			margin-top: 10px;
+			cursor: pointer;
+		}
+	}
+}
+.itemvideo:nth-child(1){
+	margin-top: 0 !important;
+}

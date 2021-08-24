@@ -1,0 +1,31 @@
+@use "theme.scss"
+.register
+	display: flex
+	justify-content: center
+	margin-top: 5em
+	width: 100%
+	button
+		padding: 1em
+		margin-top: 1em
+		border: 0
+		background-color: theme.$primary
+		text-transform: uppercase
+		color: white
+	> div
+		@media (min-width: theme.$query_sm)
+			width: 40% !important
+		@media (min-width: theme.$query_md)
+			width: 30% !important
+		width: 90%
+		padding: 1em
+		box-shadow: 0px 0px 6px 1px hsl(0, 3%, 80%)
+		input
+			padding: 1em
+.groupform
+	display: block
+	margin-top: 1em
+	label
+		font-weight: medium
+	input
+		width: 100%
+		margin-top: 5px
