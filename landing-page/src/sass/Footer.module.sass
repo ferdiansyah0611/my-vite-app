@@ -1,0 +1,21 @@
+@use "theme.sass"
+
+.main
+	@media (min-width: theme.$query_md)
+		padding: theme.$container_md
+	@media (max-width: theme.$query_md)
+		flex-wrap: wrap
+		p
+			font-size: 11px
+		> div
+			width: 100%
+	padding: theme.$container_all
+	background-color: theme.$primary
+	color: white
+	display: flex
+	.right
+		text-align: right
+	> div
+		flex: 1
+		p
+			padding: 0.5em 2em
