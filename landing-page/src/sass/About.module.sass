@@ -1,0 +1,31 @@
+@use "theme.sass"
+
+@keyframes borderles
+	0%
+		border-left: 6px ridge red
+	25%
+		border-top: 6px ridge red
+	50%
+		border-right: 6px ridge red
+	75%
+		border-bottom: 6px ridge red
+.body
+	@media (min-width: theme.$query_md)
+		padding: theme.$container_md
+	padding: theme.$container_all
+	margin-top: 100px
+	min-height: 100vh
+	> div
+		> div
+			width: 360px
+			@media (min-width: theme.$query_md)
+				width: 500px !important
+			padding: 2em
+			border: 6px ridge blue
+			animation: 2s borderles infinite
+			text-align: center
+			p
+				font-size: 16px
+	> div
+		display: flex
+		justify-content: center

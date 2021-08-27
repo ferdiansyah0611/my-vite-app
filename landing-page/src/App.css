@@ -5,11 +5,15 @@ body{
   margin: 0;
   box-sizing: border-box;
   font-family: 'Ubuntu', sans-serif;
-  position: absolute;
+  /*position: absolute;*/
+  /*overflow-x: hidden;*/
 }
 a{
   text-decoration: none;
 }
 img{
   width: 100%
+}
+#root{
+	overflow-x: hidden;
 }

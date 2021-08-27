@@ -1,0 +1,38 @@
+@use "theme.sass"
+
+.body
+	@media (min-width: theme.$query_md)
+		padding: theme.$container_md
+	padding: theme.$container_all
+	margin-top: 100px
+	min-height: 100vh
+	img.profile
+		border-radius: 50%
+		width: 220px
+		height: 220px
+	> div
+		display: flex
+		justify-content: center
+		> div
+			padding: 1em
+			border: 2px solid #eeeeee
+			width: 360px
+			@media (min-width: theme.$query_md)
+				width: 500px !important
+			text-align: center
+
+.icon
+	width: 60px
+	padding: 1em
+	&:hover
+		background-color: #eeeeee
+		cursor: pointer
+.wrap
+	display: flex
+	justify-content: center
+	margin-top: 10px
+	img
+		width: 60px
+	p
+		margin-left: 10px
+		align-self: center

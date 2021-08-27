@@ -1,11 +1,26 @@
 import React, { useState } from 'react'
+import {
+  Link
+} from 'react-router-dom'
 import s from '../sass/Navbar.module.sass'
 
+interface _menu{
+	title: string,
+	link: string
+}
+
+type __menu = {
+	title: string,
+	link: string
+}[]
+
 const Navbar = () => {
-	const [menu, setmenu] = useState([
-		'Lokasi', 'Tentang Kami', 'Kontak', 'Pertanyaan'
+	const [menu, setmenu] = useState<__menu>([
+		{title: 'Tentang Kami', link: '/about'},
+		{title: 'Kontak', link: '/contact'},
+		{title: 'Pertanyaan', link: '/faq'}
 	])
-	const [status, setstatus] = useState(false)
+	const [status, setstatus] = useState<boolean>(false)
 	let handleStatus = (e: any) => {
 		e.preventDefault()
 		if(!status){
@@ -20,12 +35,12 @@ const Navbar = () => {
 			<nav className={s.navbar}>
 				<div>
 					<div>
-						<a className={s.title} href="/">Fairy Tech</a>
+						<Link className={s.title} to="/">Fairy Tech</Link>
 					</div>
 					<div>
-						{menu.map((d, i) => {
+						{menu.map((d: _menu, i: number) => {
 							return(
-								<a key={i} href="/">{d}</a>
+								<Link key={i} to={d.link}>{d.title}</Link>
 							)
 						})}
 					</div>
@@ -40,9 +55,9 @@ const Navbar = () => {
 			</nav>
 			<div id="menu" className={s.menu}>
 				<nav>
-					{menu.map((d, i) => {
+					{menu.map((d: _menu, i: number) => {
 						return(
-							<a key={i} href="/">{d}</a>
+							<Link key={i} to={d.link}>{d.title}</Link>
 						)
 					})}
 				</nav>
