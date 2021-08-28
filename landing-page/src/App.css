@@ -17,3 +17,22 @@ img{
 #root{
 	overflow-x: hidden;
 }
+@keyframes loading{
+	from{
+		transform: rotate(0deg);
+	}
+	to{
+		transform: rotate(360deg);
+	}
+}
+.loading{
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	align-items: center;
+	height: 100vh
+}
+.loading > img{
+	animation: 1s loading infinite;
+	width: 80px;
+}

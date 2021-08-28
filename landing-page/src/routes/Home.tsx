@@ -120,7 +120,7 @@ function Home() {
             </div>
             <div className={s.description}>
               <h2>
-                Startup Yang Bekerja Pada Bidang Teknologi di Indonesia
+                Startup Yang Bergerak Pada Bidang Teknologi di Indonesia
               </h2>
               <p>
                 Fairy Technology adalah sebuah startup memfokuskan teknologi <span style={{color: 'red', borderRight: '1px solid white'}}>{writetext}</span>
@@ -183,7 +183,6 @@ function Home() {
               </div>
             </div>
           </div>
-          <div></div>
         </section>
       </div>
       <div className={s.bgWhite}>
@@ -205,7 +204,6 @@ function Home() {
               </div>
             </div>
           </div>
-          <div></div>
         </section>
       </div>
     </section>

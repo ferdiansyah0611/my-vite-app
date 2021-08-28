@@ -5,6 +5,8 @@ import {
 // component
 import Navbar from './component/Navbar'
 import Footer from './component/Footer'
+// svg
+import Loading from './svg/Loading.svg'
 // routes
 const Home = lazy(() => import('./routes/Home'))
 const About = lazy(() => import('./routes/About'))
@@ -13,6 +15,7 @@ const Contact = lazy(() => import('./routes/Contact'))
 // style
 import './App.css'
 
+const Loaded = () => <div className="loading"><img src={Loading} alt="load"/></div>
 
 function App() {
   return (
@@ -20,16 +23,16 @@ function App() {
       <BrowserRouter>
         <Navbar/>
         <main>
-          <Suspense fallback={<p>Loading</p>}>
+          <Suspense fallback={<Loaded/>}>
             <Route path="/" component={Home} exact/>
           </Suspense>
-          <Suspense fallback={<p>Loading</p>}>
+          <Suspense fallback={<Loaded/>}>
             <Route path="/about" component={About}/>
           </Suspense>
-          <Suspense fallback={<p>Loading</p>}>
+          <Suspense fallback={<Loaded/>}>
             <Route path="/faq" component={Faq}/>
           </Suspense>
-          <Suspense fallback={<p>Loading</p>}>
+          <Suspense fallback={<Loaded/>}>
             <Route path="/contact" component={Contact}/>
           </Suspense>
         </main>
