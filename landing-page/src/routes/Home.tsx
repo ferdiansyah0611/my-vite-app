@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react'
+import Checklist from '../icon/Checklist'
 // media
 import example from '../1629952884637.png'
 // style
@@ -201,6 +202,197 @@ function Home() {
                     </div>
                   )
                 })}
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+      <div className={s.bgBlack}>
+        <section>
+          <div className={s.home_4}>
+            <div>
+              <h3>Harga & Fitur Pembuatan Web App</h3>
+              <div className={s.pricing}>
+                <div>
+                  <h4>Frontend S1</h4>
+                  <ul>
+                    <li>
+                      <Checklist color="green"/>
+                      <span>Satu Halaman</span>
+                    </li>
+                    <li>
+                      <Checklist color="green"/>
+                      <span>Custom Desain</span>
+                    </li>
+                    <li>
+                      <Checklist color="green"/>
+                      <span>Single Page Application</span>
+                    </li>
+                    <li>
+                      <Checklist color="green"/>
+                      <span>Mendukung Progressive Web Apps</span>
+                    </li>
+                    <li>
+                      <Checklist color="green"/>
+                      <span>Melihat Projek di Github</span>
+                    </li>
+                    <li>
+                      <Checklist color="green"/>
+                      <span>Termasuk Source Code</span>
+                    </li>
+                  </ul>
+                  <button className={s.secondary}>Rp. 250.000</button>
+                </div>
+                <div>
+                  <h4>Frontend S2</h4>
+                  <ul>
+                    <li>
+                      <Checklist color="green"/>
+                      <span>Tiga Halaman</span>
+                    </li>
+                    <li>
+                      <Checklist color="green"/>
+                      <span>Custom Desain</span>
+                    </li>
+                    <li>
+                      <Checklist color="green"/>
+                      <span>Single Page Application</span>
+                    </li>
+                    <li>
+                      <Checklist color="green"/>
+                      <span>Mendukung Progressive Web Apps</span>
+                    </li>
+                    <li>
+                      <Checklist color="green"/>
+                      <span>Melihat Projek di Github</span>
+                    </li>
+                    <li>
+                      <Checklist color="green"/>
+                      <span>Termasuk Source Code</span>
+                    </li>
+                  </ul>
+                  <button className={s.secondary}>Rp. 400.000</button>
+                </div>
+                <div>
+                  <h4>Frontend S3</h4>
+                  <ul>
+                    <li>
+                      <Checklist color="green"/>
+                      <span>Sembilan Halaman</span>
+                    </li>
+                    <li>
+                      <Checklist color="green"/>
+                      <span>Custom Desain</span>
+                    </li>
+                    <li>
+                      <Checklist color="green"/>
+                      <span>Single Page Application</span>
+                    </li>
+                    <li>
+                      <Checklist color="green"/>
+                      <span>Mendukung Progressive Web Apps</span>
+                    </li>
+                    <li>
+                      <Checklist color="green"/>
+                      <span>Melihat Projek di Github</span>
+                    </li>
+                    <li>
+                      <Checklist color="green"/>
+                      <span>Termasuk Source Code</span>
+                    </li>
+                  </ul>
+                  <button className={s.secondary}>Rp. 1.000.000</button>
+                </div>
+                <div>
+                  <h4>Backend S1</h4>
+                  <ul>
+                    <li>
+                      <Checklist color="green"/>
+                      <span>Lima Tabel CRUD</span>
+                    </li>
+                    <li>
+                      <Checklist color="green"/>
+                      <span>Restfull API (Mysql)</span>
+                    </li>
+                    <li>
+                      <Checklist color="green"/>
+                      <span>Autentikasi</span>
+                    </li>
+                    <li>
+                      <Checklist color="green"/>
+                      <span>Mendukung Migrasi Database</span>
+                    </li>
+                    <li>
+                      <Checklist color="green"/>
+                      <span>Melihat Projek di Github</span>
+                    </li>
+                    <li>
+                      <Checklist color="green"/>
+                      <span>Termasuk Source Code</span>
+                    </li>
+                  </ul>
+                  <button className={s.secondary}>Rp. 250.000</button>
+                </div>
+                <div>
+                  <h4>Backend S2</h4>
+                  <ul>
+                    <li>
+                      <Checklist color="green"/>
+                      <span>Delapan Tabel CRUD</span>
+                    </li>
+                    <li>
+                      <Checklist color="green"/>
+                      <span>Restfull API (Mysql)</span>
+                    </li>
+                    <li>
+                      <Checklist color="green"/>
+                      <span>Autentikasi</span>
+                    </li>
+                    <li>
+                      <Checklist color="green"/>
+                      <span>Mendukung Migrasi Database</span>
+                    </li>
+                    <li>
+                      <Checklist color="green"/>
+                      <span>Melihat Projek di Github</span>
+                    </li>
+                    <li>
+                      <Checklist color="green"/>
+                      <span>Termasuk Source Code</span>
+                    </li>
+                  </ul>
+                  <button className={s.secondary}>Rp. 600.000</button>
+                </div>
+                <div>
+                  <h4>Backend S3</h4>
+                  <ul>
+                    <li>
+                      <Checklist color="green"/>
+                      <span>Dua Belas Tabel CRUD</span>
+                    </li>
+                    <li>
+                      <Checklist color="green"/>
+                      <span>Restfull API (Mysql)</span>
+                    </li>
+                    <li>
+                      <Checklist color="green"/>
+                      <span>Autentikasi</span>
+                    </li>
+                    <li>
+                      <Checklist color="green"/>
+                      <span>Mendukung Migrasi Database</span>
+                    </li>
+                    <li>
+                      <Checklist color="green"/>
+                      <span>Melihat Projek di Github</span>
+                    </li>
+                    <li>
+                      <Checklist color="green"/>
+                      <span>Termasuk Source Code</span>
+                    </li>
+                  </ul>
+                  <button className={s.secondary}>Rp. 1.400.000</button>
+                </div>
               </div>
             </div>
           </div>
