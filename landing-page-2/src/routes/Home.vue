@@ -50,158 +50,157 @@ let changeTab = (e) => {
 				</div>
 			</div>
 			<div class="right">
-					<div class="tab-head">
-						<a @click="changeTab" data-name="exchange" href="/" :class="activetab === 'exchange' ? 'active': ''">Exchange Crypto</a>
-						<a @click="changeTab" data-name="buy" href="/" :class="activetab === 'buy' ? 'active': ''">Buy and Sell</a>
-					</div>
-					<div v-if="activetab === 'exchange'" class="tab-body">
-						<div>
-							<div class="flex">
-								<input @keyup="inputChangeFrom" type="number" value="0">
-								<select @change="changeFrom">
-									<option v-for="(d,i) in currency" :key="i" :selected="i === 0" :value="d.short">{{d.name}}</option>
-								</select>
-							</div>
-						</div>
-						<div>
-							<div class="flex">
-								<div class="flex">
-									<span class="locked">
-										<svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-										  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
-										</svg>
-									</span>
-									<p v-if="choose">1 {{choose}} ~ <span>${{currency.find(d => d.short === choose).price || 0}}</span></p>
-								</div>
-								<div class="refresh">
-									<span>
-										<svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-										  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
-										</svg>
-									</span>
-								</div>
-							</div>
-						</div>
-						<div>
-							<div class="flex">
-								<input :readonly="true" type="number" :value="input_to">
-								<select @change="ChangeTo">
-									<option v-for="(d,i) in currency" :key="i" :selected="i === 1" :value="d.short">{{d.name}}</option>
-								</select>
-							</div>
-						</div>
-						<div>
-							<button class="bg-primary exchange">Exchange Now</button>
+				<div class="tab-head">
+					<a @click="changeTab" data-name="exchange" href="/" :class="activetab === 'exchange' ? 'active': ''">Exchange Crypto</a>
+					<a @click="changeTab" data-name="buy" href="/" :class="activetab === 'buy' ? 'active': ''">Buy and Sell</a>
+				</div>
+				<div v-if="activetab === 'exchange'" class="tab-body">
+					<div>
+						<div class="flex">
+							<input @keyup="inputChangeFrom" type="number" value="0">
+							<select @change="changeFrom">
+								<option v-for="(d,i) in currency" :key="i" :selected="i === 0" :value="d.short">{{d.name}}</option>
+							</select>
 						</div>
 					</div>
-					<div v-if="activetab === 'buy'" class="tab-body">
-						<div>
+					<div>
+						<div class="flex">
 							<div class="flex">
-								<input type="number" value="0">
-								<select>
-									<option v-for="(d,i) in currency" :key="i" :selected="i === 0" :value="d.short">{{d.name}}</option>
-								</select>
+								<span class="locked">
+									<svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+									  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
+									</svg>
+								</span>
+								<p v-if="choose">1 {{choose}} ~ <span>${{currency.find(d => d.short === choose).price || 0}}</span></p>
 							</div>
-						</div>
-						<div>
-							<div class="flex">
-								<div class="flex">
-									<span class="locked">
-										<svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-										  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
-										</svg>
-									</span>
-									<p>1 BTC ~ $10000</p>
-								</div>
-								<div class="refresh">
-									<span>
-										<svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-										  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
-										</svg>
-									</span>
-								</div>
+							<div class="refresh">
+								<span>
+									<svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+									  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
+									</svg>
+								</span>
 							</div>
-						</div>
-						<div>
-							<div class="flex">
-								<input type="number" value="0">
-								<select>
-									<option v-for="(d,i) in currency" :key="i" :selected="i === 1" :value="d.short">{{d.name}}</option>
-								</select>
-							</div>
-						</div>
-						<div class="list-button">
-							<button class="bg-primary">Buy</button>
-							<button>Sell</button>
 						</div>
 					</div>
+					<div>
+						<div class="flex">
+							<input :readonly="true" type="number" :value="input_to">
+							<select @change="ChangeTo">
+								<option v-for="(d,i) in currency" :key="i" :selected="i === 1" :value="d.short">{{d.name}}</option>
+							</select>
+						</div>
+					</div>
+					<div>
+						<button class="bg-primary exchange">Exchange Now</button>
+					</div>
+				</div>
+				<div v-if="activetab === 'buy'" class="tab-body">
+					<div>
+						<div class="flex">
+							<input type="number" value="0">
+							<select>
+								<option v-for="(d,i) in currency" :key="i" :selected="i === 0" :value="d.short">{{d.name}}</option>
+							</select>
+						</div>
+					</div>
+					<div>
+						<div class="flex">
+							<div class="flex">
+								<span class="locked">
+									<svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+									  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
+									</svg>
+								</span>
+								<p>1 BTC ~ $10000</p>
+							</div>
+							<div class="refresh">
+								<span>
+									<svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+									  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
+									</svg>
+								</span>
+							</div>
+						</div>
+					</div>
+					<div>
+						<div class="flex">
+							<input type="number" value="0">
+							<select>
+								<option v-for="(d,i) in currency" :key="i" :selected="i === 1" :value="d.short">{{d.name}}</option>
+							</select>
+						</div>
+					</div>
+					<div class="list-button">
+						<button class="bg-primary">Buy</button>
+						<button>Sell</button>
+					</div>
+				</div>
 			</div>
 		</div>
 	</section>
 	<section class="body">
 		<div>
 			<div>
-					<h5>HOW IT WORKS</h5>
-					<h1>Why buy crypto at MF Crypto</h1>
-					<p class="description">There's no faster, safer place to buy cryptocurrency</p>
-					<div class="list-item">
-						<div>
-							<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
-							  <path fill-rule="evenodd" d="M6.672 1.911a1 1 0 10-1.932.518l.259.966a1 1 0 001.932-.518l-.26-.966zM2.429 4.74a1 1 0 10-.517 1.932l.966.259a1 1 0 00.517-1.932l-.966-.26zm8.814-.569a1 1 0 00-1.415-1.414l-.707.707a1 1 0 101.415 1.415l.707-.708zm-7.071 7.072l.707-.707A1 1 0 003.465 9.12l-.708.707a1 1 0 001.415 1.415zm3.2-5.171a1 1 0 00-1.3 1.3l4 10a1 1 0 001.823.075l1.38-2.759 3.018 3.02a1 1 0 001.414-1.415l-3.019-3.02 2.76-1.379a1 1 0 00-.076-1.822l-10-4z" clip-rule="evenodd" />
-							</svg>
-							<h4>Pick a Crypto</h4>
-							<p>We support more than 10.000 currency pairs and the list is constantly growing. Pick the one you like.</p>
-						</div>
-						<div>
-							<svg xmlns="http://www.w3.org/2000/svg" class="rotation" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-							  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
-							</svg>
-							<h4>Exchange</h4>
-							<p>We handle everything complicated so that you can spend your time on what masters.</p>
-						</div>
-						<div>
-							<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-							  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 15v-1a4 4 0 00-4-4H8m0 0l3 3m-3-3l3-3m9 14V5a2 2 0 00-2-2H6a2 2 0 00-2 2v16l4-2 4 2 4-2 4 2z" />
-							</svg>
-							<h4>Receive your Funds</h4>
-							<p>We match the estimate and the outcome better than anyone else, thanks to our RealRates system.</p>
-						</div>
+				<h5>HOW IT WORKS</h5>
+				<h1>Why buy crypto at MF Crypto</h1>
+				<p class="description">There's no faster, safer place to buy cryptocurrency</p>
+				<div class="list-item">
+					<div>
+						<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+						  <path fill-rule="evenodd" d="M6.672 1.911a1 1 0 10-1.932.518l.259.966a1 1 0 001.932-.518l-.26-.966zM2.429 4.74a1 1 0 10-.517 1.932l.966.259a1 1 0 00.517-1.932l-.966-.26zm8.814-.569a1 1 0 00-1.415-1.414l-.707.707a1 1 0 101.415 1.415l.707-.708zm-7.071 7.072l.707-.707A1 1 0 003.465 9.12l-.708.707a1 1 0 001.415 1.415zm3.2-5.171a1 1 0 00-1.3 1.3l4 10a1 1 0 001.823.075l1.38-2.759 3.018 3.02a1 1 0 001.414-1.415l-3.019-3.02 2.76-1.379a1 1 0 00-.076-1.822l-10-4z" clip-rule="evenodd" />
+						</svg>
+						<h4>Pick a Crypto</h4>
+						<p>We support more than 10.000 currency pairs and the list is constantly growing. Pick the one you like.</p>
 					</div>
-				
+					<div>
+						<svg xmlns="http://www.w3.org/2000/svg" class="rotation" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+						  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
+						</svg>
+						<h4>Exchange</h4>
+						<p>We handle everything complicated so that you can spend your time on what masters.</p>
+					</div>
+					<div>
+						<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+						  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 15v-1a4 4 0 00-4-4H8m0 0l3 3m-3-3l3-3m9 14V5a2 2 0 00-2-2H6a2 2 0 00-2 2v16l4-2 4 2 4-2 4 2z" />
+						</svg>
+						<h4>Receive your Funds</h4>
+						<p>We match the estimate and the outcome better than anyone else, thanks to our RealRates system.</p>
+					</div>
+				</div>
 			</div>
 		</div>
 	</section>
 	<section class="body">
 		<div>
-				<div>
-					<h5>FEATURED</h5>
-					<h1>The Service You Deserve</h1>
-					<p class="description">There's no faster, safer place to buy cryptocurrency</p>
-					<div class="list-item">
-						<div>
-							<svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
-							  <path d="M8.433 7.418c.155-.103.346-.196.567-.267v1.698a2.305 2.305 0 01-.567-.267C8.07 8.34 8 8.114 8 8c0-.114.07-.34.433-.582zM11 12.849v-1.698c.22.071.412.164.567.267.364.243.433.468.433.582 0 .114-.07.34-.433.582a2.305 2.305 0 01-.567.267z" />
-							  <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-13a1 1 0 10-2 0v.092a4.535 4.535 0 00-1.676.662C6.602 6.234 6 7.009 6 8c0 .99.602 1.765 1.324 2.246.48.32 1.054.545 1.676.662v1.941c-.391-.127-.68-.317-.843-.504a1 1 0 10-1.51 1.31c.562.649 1.413 1.076 2.353 1.253V15a1 1 0 102 0v-.092a4.535 4.535 0 001.676-.662C13.398 13.766 14 12.991 14 12c0-.99-.602-1.765-1.324-2.246A4.535 4.535 0 0011 9.092V7.151c.391.127.68.317.843.504a1 1 0 101.511-1.31c-.563-.649-1.413-1.076-2.354-1.253V5z" clip-rule="evenodd" />
-							</svg>
-							<h4>Limitless Exchanges</h4>
-							<p>You have all the freedom in the world start with less than $2 in your favorite coin. You don't have to worry about any upper limits swap as much crypto in one go as you want.</p>
-						</div>
-						<div>
-							<svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
-							  <path fill-rule="evenodd" d="M11.3 1.046A1 1 0 0112 2v5h4a1 1 0 01.82 1.573l-7 10A1 1 0 018 18v-5H4a1 1 0 01-.82-1.573l7-10a1 1 0 011.12-.38z" clip-rule="evenodd" />
-							</svg>
-							<h4>Instant Crypto Exchange</h4>
-							<p>Our service is built for simplicity and superspeed - we exchange crypto in 2 minutes on average. We also support Visa and MasterCard for fast and easy fiat-to-crypto purchases.</p>
-						</div>
-						<div>
-							<svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-							  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
-							</svg>
-							<h4>Absolute Safety</h4>
-							<p>Your safety is our top priority - as a non custodial service, ChangeNOW does not control your crypto assets. We do not store your funds or require registration.</p>
-						</div>
+			<div>
+				<h5>FEATURED</h5>
+				<h1>The Service You Deserve</h1>
+				<p class="description">There's no faster, safer place to buy cryptocurrency</p>
+				<div class="list-item">
+					<div>
+						<svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+						  <path d="M8.433 7.418c.155-.103.346-.196.567-.267v1.698a2.305 2.305 0 01-.567-.267C8.07 8.34 8 8.114 8 8c0-.114.07-.34.433-.582zM11 12.849v-1.698c.22.071.412.164.567.267.364.243.433.468.433.582 0 .114-.07.34-.433.582a2.305 2.305 0 01-.567.267z" />
+						  <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-13a1 1 0 10-2 0v.092a4.535 4.535 0 00-1.676.662C6.602 6.234 6 7.009 6 8c0 .99.602 1.765 1.324 2.246.48.32 1.054.545 1.676.662v1.941c-.391-.127-.68-.317-.843-.504a1 1 0 10-1.51 1.31c.562.649 1.413 1.076 2.353 1.253V15a1 1 0 102 0v-.092a4.535 4.535 0 001.676-.662C13.398 13.766 14 12.991 14 12c0-.99-.602-1.765-1.324-2.246A4.535 4.535 0 0011 9.092V7.151c.391.127.68.317.843.504a1 1 0 101.511-1.31c-.563-.649-1.413-1.076-2.354-1.253V5z" clip-rule="evenodd" />
+						</svg>
+						<h4>Limitless Exchanges</h4>
+						<p>You have all the freedom in the world start with less than $2 in your favorite coin. You don't have to worry about any upper limits swap as much crypto in one go as you want.</p>
+					</div>
+					<div>
+						<svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+						  <path fill-rule="evenodd" d="M11.3 1.046A1 1 0 0112 2v5h4a1 1 0 01.82 1.573l-7 10A1 1 0 018 18v-5H4a1 1 0 01-.82-1.573l7-10a1 1 0 011.12-.38z" clip-rule="evenodd" />
+						</svg>
+						<h4>Instant Crypto Exchange</h4>
+						<p>Our service is built for simplicity and superspeed - we exchange crypto in 2 minutes on average. We also support Visa and MasterCard for fast and easy fiat-to-crypto purchases.</p>
+					</div>
+					<div>
+						<svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+						  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+						</svg>
+						<h4>Absolute Safety</h4>
+						<p>Your safety is our top priority - as a non custodial service, ChangeNOW does not control your crypto assets. We do not store your funds or require registration.</p>
 					</div>
 				</div>
+			</div>
 		</div>
 	</section>
 </template>
@@ -318,7 +317,7 @@ svg
 			display: flex
 
 .body
-	padding: 0 4em
+	padding: 2em 4em
 	display: grid
 	grid-template-columns: repeat(1, 1fr)
 	color: white
@@ -334,7 +333,6 @@ svg
 		margin-top: 8em
 
 	> div
-		min-height: 100vh
 		display: flex
 		justify-content: center
 		text-align: center
@@ -342,7 +340,7 @@ svg
 		p.description
 			color: theme.$txtgrey
 		h5
-			color: #0066ff
+			color: theme.$primary
 
 		.list-item
 			display: grid
