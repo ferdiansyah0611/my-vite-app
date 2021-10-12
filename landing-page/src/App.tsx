@@ -12,6 +12,8 @@ const Home = lazy(() => import('./routes/Home'))
 const About = lazy(() => import('./routes/About'))
 const Faq = lazy(() => import('./routes/Faq'))
 const Contact = lazy(() => import('./routes/Contact'))
+const Pricing = lazy(() => import('./routes/Pricing'))
+const Work = lazy(() => import('./routes/Work'))
 // style
 import './App.css'
 
@@ -34,6 +36,12 @@ function App() {
           </Suspense>
           <Suspense fallback={<Loaded/>}>
             <Route path="/contact" component={Contact}/>
+          </Suspense>
+          <Suspense fallback={<Loaded/>}>
+            <Route path="/pricing" component={Pricing}/>
+          </Suspense>
+          <Suspense fallback={<Loaded/>}>
+            <Route path="/work" component={Work}/>
           </Suspense>
         </main>
       </BrowserRouter>

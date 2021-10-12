@@ -18,7 +18,8 @@ const Navbar = () => {
 	const [menu, setmenu] = useState<__menu>([
 		{title: 'Tentang Kami', link: '/about'},
 		{title: 'Kontak', link: '/contact'},
-		{title: 'Pertanyaan', link: '/faq'}
+		{title: 'Pertanyaan', link: '/faq'},
+		{title: 'Harga', link: '/pricing'},
 	])
 	const [status, setstatus] = useState<boolean>(false)
 	let handleStatus = (e: any) => {
